@@ -5,6 +5,8 @@ using Emitter;
 
 public class Character : Actor
 {
+    public SpriteRenderer SpriteRenderer { get; private set; }
+
     public override ActorType GetActorType()
     {
         return ActorType.Character;
@@ -12,8 +14,17 @@ public class Character : Actor
 
     public override void OnGameInitialize()
     {
+        Transform tf = transform.Find("body");
+        if (tf != null)
+        {
+            this.SpriteRenderer = tf.GetComponent<SpriteRenderer>();
+        }
+        else
+        {
+            Game.LogError("找不到角色body");
+        }
         mAnimator = new ActorAnimator();
-        mAnimator.Initialize(gameObject);
+        mAnimator.Initialize(GetComponent<Animator>());
         mAnimator.loop = false;
         mBehaviorFSM = new ActorBehaviorFSM(this);
         mBehaviorProvider = new CharacterBehaviors();
@@ -87,7 +98,7 @@ public class Character : Actor
         Hp.Value -= (float)damage;
     }
 
-    public  void CreateDieEffect()
+    public void CreateDieEffect()
     {
     }
 

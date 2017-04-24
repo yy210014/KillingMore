@@ -59,7 +59,6 @@ public class CharacterBehaviors : ActorBehaivorProvider
 
     public static void MoveEnter(Actor ac, ActorBehavior last)
     {
-        ac.ActorAnimator_.SwitchAnimation(MOVE_ATTACK);
         Character ca = ac as Character;
         ca.IteraterEmiters((be) =>
         {
@@ -72,7 +71,6 @@ public class CharacterBehaviors : ActorBehaivorProvider
         float dt = ac.SelfTimeScale * GameScene.Singleton.TimeDelta;
         Character ca = ac as Character;
         Move(ca, dt);
-        Turning(ca);
         return MOVE;
     }
 
@@ -87,7 +85,6 @@ public class CharacterBehaviors : ActorBehaivorProvider
 
     public static void AttackEnter(Actor ac, ActorBehavior last)
     {
-        ac.ActorAnimator_.SwitchAnimation(MOVE_ATTACK);
     }
 
     public static int AttackUpdate(Actor ac)
@@ -108,7 +105,6 @@ public class CharacterBehaviors : ActorBehaivorProvider
 
     public static void MoveNAttackEnter(Actor ac, ActorBehavior last)
     {
-        ac.ActorAnimator_.SwitchAnimation(MOVE_ATTACK);
     }
 
     public static int MoveNAttackUpdate(Actor ac)
@@ -116,7 +112,6 @@ public class CharacterBehaviors : ActorBehaivorProvider
         float dt = ac.SelfTimeScale * GameScene.Singleton.TimeDelta;
         Character ca = ac as Character;
         Move(ca, dt);
-        Turning(ca);
         ca.IteraterEmiters((be) =>
         {
             be.OnGameUpdate(dt);
@@ -153,8 +148,29 @@ public class CharacterBehaviors : ActorBehaivorProvider
         float v = Input.GetAxisRaw("Vertical");
         Vector3 movement = Vector3.zero;
         movement.Set(h, 0f, v);
-        movement = movement.normalized * character.Speed * dt;
-        character.transform.position += movement;
+        if (movement != Vector3.zero)
+        {
+            character.ActorAnimator_.SwitchAnimation(MOVE);
+            character.transform.position += movement * character.Speed * dt;
+        }
+        else
+        {
+            character.ActorAnimator_.SwitchAnimation(IDLE);
+        }
+        float dot = Vector3.Dot(Vector3.right, movement.normalized);
+        if (dot == 0)
+        {
+            return;
+        }
+        if (Mathf.Sign(dot) > 0)
+        {
+            if (character.SpriteRenderer.flipX) character.SpriteRenderer.flipX = false;
+        }
+        else
+        {
+            if (!character.SpriteRenderer.flipX) character.SpriteRenderer.flipX = true;
+        }
+        Debug.Log(dot);
     }
 
     static void Turning(Character character)
