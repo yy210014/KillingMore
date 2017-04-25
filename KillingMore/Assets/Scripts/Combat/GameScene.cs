@@ -53,6 +53,7 @@ public class GameScene
             Vector3 dir = (Vector3.zero - mSpawnPts[i]).normalized;
             mSpawnerRots[i] = Quaternion.LookRotation(dir, Vector3.up);
         }
+        ReconstructStage();
         mPreloadStuff.ExecuteTasks();
     }
 
@@ -68,7 +69,49 @@ public class GameScene
             Game.Singleton.RegisterEventHandler(GameEvent.ActorDie, OnActorDieEvent);
             CreateCharacter(1000);
         }
+        SpawnRegion();
         mGameUpdateProc = InGameUpdate;
+    }
+
+    public void ReconstructStage()
+    {
+        string fileName = BattleEdit.FileName;
+        string context = BinaryReadNWrite.ReadAsString(fileName);
+        if (context != null)
+        {
+            string[] strs = context.Split(new string[] { System.Environment.NewLine }, System.StringSplitOptions.RemoveEmptyEntries);
+            for (int i = 0; i < strs.Length; ++i)
+            {
+                JsonData jd = JsonMapper.ToObject(strs[i]);
+                ActorSpawnSchedule ass = new ActorSpawnSchedule();
+                ass.mPrefabName = (string)jd["Name"];
+                ass.mActorType = (Actor.ActorType)System.Enum.Parse(typeof(Actor.ActorType), (string)jd["ActorType"]);
+                float x = (float)((double)jd["X"]);
+                float y = (float)((double)jd["Y"]);
+                float z = (float)((double)jd["Z"]);
+                Vector3 relPos = Vector3.zero;
+                relPos.Set(x, y, z);
+                ass.mRelPos = relPos;
+                float y_rot = (float)((double)jd["Rot"]);
+                ass.mRot = Quaternion.Euler(0, y_rot, 0);
+                mRegionSchedule.Add(ass);
+            }
+        }
+    }
+
+    void SpawnRegion()
+    {
+        for (int i = 0; i < mRegionSchedule.Count; ++i)
+        {
+            ActorSpawnSchedule ass = mRegionSchedule[i];
+            GameObject g = mPreloadStuff.FetchPreloadedItem(ass.mPrefabName, AssetsManager.String2ResType(ass.mActorType.ToString()), true);
+            if (g != null)
+            {
+                g.SetActive(true);
+                g.transform.position = ass.mRelPos;
+                g.transform.rotation = ass.mRot;//ass.mRot * groupQt.Rot;
+            }
+        }
     }
 
     void CreateCharacter(int id)
@@ -340,6 +383,7 @@ public class GameScene
     System.Action<float> mGameUpdateProc = null;
     System.Predicate<Projectile> mProjClipFunc;
     GamePreload mPreloadStuff = new GamePreload();
+    List<ActorSpawnSchedule> mRegionSchedule = new List<ActorSpawnSchedule>();
     bool mGameInitialized = false;
     float mGameTimeScale = 1.0f;
     float mElapsed = 0;
@@ -353,4 +397,12 @@ public class GameScene
     float mMaxViewX;
     float mMinViewZ;
     float mMaxViewZ;
+}
+
+public class ActorSpawnSchedule
+{
+    public string mPrefabName;
+    public Actor.ActorType mActorType;
+    public Vector3 mRelPos;
+    public Quaternion mRot;
 }
