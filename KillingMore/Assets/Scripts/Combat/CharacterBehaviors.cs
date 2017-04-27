@@ -71,6 +71,7 @@ public class CharacterBehaviors : ActorBehaivorProvider
         float dt = ac.SelfTimeScale * GameScene.Singleton.TimeDelta;
         Character ca = ac as Character;
         Move(ca, dt);
+        //  Turning(ca);
         return MOVE;
     }
 
@@ -112,6 +113,7 @@ public class CharacterBehaviors : ActorBehaivorProvider
         float dt = ac.SelfTimeScale * GameScene.Singleton.TimeDelta;
         Character ca = ac as Character;
         Move(ca, dt);
+        //  Turning(ca);
         ca.IteraterEmiters((be) =>
         {
             be.OnGameUpdate(dt);
@@ -150,27 +152,48 @@ public class CharacterBehaviors : ActorBehaivorProvider
         movement.Set(h, 0f, v);
         if (movement != Vector3.zero)
         {
-            character.ActorAnimator_.SwitchAnimation(MOVE);
+            int dir = 0;
+            float dr = Vector3.Dot(Vector3.right, movement.normalized);
+            float db = Vector3.Dot(Vector3.back, movement.normalized);
+            if (movement.normalized == Vector3.forward)
+            {
+                dir = ActorAnimator.UP;
+            }
+            else if (movement.normalized == Vector3.back)
+            {
+                dir = ActorAnimator.DOWN;
+            }
+            else if (movement.normalized == Vector3.left)
+            {
+                dir = ActorAnimator.LEFT;
+            }
+            else if (movement.normalized == Vector3.right)
+            {
+                dir = ActorAnimator.RIGHT;
+            }
+            else if (dr > 0.5f && dr < 1)
+            {
+                dir = ActorAnimator.UP_RIGHT;
+                if (db > 0.5f && db < 1)
+                {
+                    dir = ActorAnimator.RIGHT;
+                }
+            }
+            else if (dr > -1f && dr < -0.5f)
+            {
+                dir = ActorAnimator.UP_LEFT;
+                if (db > 0.5f && db < 1)
+                {
+                    dir = ActorAnimator.LEFT;
+                }
+            }
+            character.ActorAnimator_.SwitchAnimation(MOVE, dir);
             character.transform.position += movement * character.Speed * dt;
         }
         else
         {
             character.ActorAnimator_.SwitchAnimation(IDLE);
         }
-        float dot = Vector3.Dot(Vector3.right, movement.normalized);
-        if (dot == 0)
-        {
-            return;
-        }
-        if (Mathf.Sign(dot) > 0)
-        {
-            if (character.SpriteRenderer.flipX) character.SpriteRenderer.flipX = false;
-        }
-        else
-        {
-            if (!character.SpriteRenderer.flipX) character.SpriteRenderer.flipX = true;
-        }
-        Debug.Log(dot);
     }
 
     static void Turning(Character character)

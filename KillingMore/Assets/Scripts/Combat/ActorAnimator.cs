@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ActorAnimator
 {
+    public const int UP = 0;
+    public const int DOWN = 1;
+    public const int LEFT = 2;
+    public const int RIGHT = 3;
+    public const int UP_LEFT = 4;
+    public const int UP_RIGHT = 5;
+
     public Animator Animator { get; private set; }
 
     bool mLoop;
@@ -47,12 +54,20 @@ public class ActorAnimator
         mCurrentState = 0;
     }
 
-    public virtual void SwitchAnimation(int st, float playbackSpeed = 1.0f)
+    public virtual void SwitchAnimation(int st, int dir = -1, float playbackSpeed = 1.0f)
     {
-        if (Animator != null && mCurrentState != st)
+        if (Animator != null && (mCurrentState != st || mCurrentDirection != dir))
         {
-            Animator.Play(GetAnimNameByState(st));
+            if (dir == -1)
+            {
+                Animator.Play(GetAnimNameByState(st));
+            }
+            else
+            {
+                Animator.Play(GetAnimNameByState(st) + "_" + GetAnimNameByDirection(dir));
+            }
             mCurrentState = st;
+            mCurrentDirection = dir;
             // Animator.StartPlayback();
             //    PlaybackSpeed = playbackSpeed;
         }
@@ -78,5 +93,27 @@ public class ActorAnimator
         return Misc.String_Unknown;
     }
 
+    public virtual string GetAnimNameByDirection(int dir)
+    {
+        switch (dir)
+        {
+            case UP:
+                return "Up";
+            case DOWN:
+                return "Down";
+            case LEFT:
+                return "Left";
+            case RIGHT:
+                return "Right";
+            case UP_LEFT:
+                return "Up_Left";
+            case UP_RIGHT:
+                return "Up_Right";
+                
+        }
+        return "";
+    }
+
     protected int mCurrentState = Actor.InvalidActorBehaviorType;
+    protected int mCurrentDirection = Actor.InvalidActorBehaviorType;
 }

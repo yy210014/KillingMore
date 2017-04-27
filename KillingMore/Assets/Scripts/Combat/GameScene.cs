@@ -150,7 +150,7 @@ public class GameScene
                     ass.Emitter = emitter;
                     character.InitialAddEmitter(emitter, Vector3.zero, Quaternion.identity);
                     character.AddAttackStateSchedule(ass);
-                    character.SwitchBulletEmitte(0);
+                //    character.SwitchBulletEmitte(0);
                 }
             }
         }

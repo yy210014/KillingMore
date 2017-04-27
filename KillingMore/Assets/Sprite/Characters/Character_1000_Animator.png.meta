@@ -1,0 +1,420 @@
+fileFormatVersion: 2
+guid: 97fce826c1818b44cb9f7db58aded8ef
+timeCreated: 1493277624
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: MoveUp01
+    21300002: MoveUp02
+    21300004: MoveUp03
+    21300006: MoveUp04
+    21300008: MoveUp05
+    21300010: MoveUp06
+    21300012: MoveLeftRight01
+    21300014: MoveLeftRight02
+    21300016: MoveLeftRight03
+    21300018: MoveLeftRight04
+    21300020: MoveLeftRight05
+    21300022: MoveLeftRight06
+    21300024: MoveDown01
+    21300026: MoveDown02
+    21300028: MoveDown03
+    21300030: MoveDown04
+    21300032: MoveDown05
+    21300034: MoveDown06
+    21300036: MoveUpRight01
+    21300038: MoveUpRight02
+    21300040: MoveUpRight03
+    21300042: MoveUpRight04
+    21300044: MoveUpRight05
+    21300046: MoveUpRight06
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Android
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: MoveUp01
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 223
+        width: 69
+        height: 91
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.48351648}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUp02
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 131
+        width: 66
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47777775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUp03
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 23
+        width: 66
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.50537634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUp04
+      rect:
+        serializedVersion: 2
+        x: 199
+        y: 421
+        width: 69
+        height: 90
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.47777775}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUp05
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 118
+        width: 69
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.4946237}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUp06
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 316
+        width: 66
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.50537634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveLeftRight01
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 40
+        width: 64
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44943815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveLeftRight02
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 233
+        width: 64
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveLeftRight03
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 238
+        width: 64
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5505618}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveLeftRight04
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 330
+        width: 64
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44943815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveLeftRight05
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 329
+        width: 64
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveLeftRight06
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 422
+        width: 64
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5505618}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveDown01
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 57
+        width: 70
+        height: 88
+      alignment: 9
+      pivot: {x: 0.4857143, y: 0.39772728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveDown02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 411
+        width: 67
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5074627, y: 0.47}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveDown03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 312
+        width: 66
+        height: 97
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5463917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveDown04
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 148
+        width: 69
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.39772728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveDown05
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 19
+        width: 67
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5074627, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveDown06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 213
+        width: 66
+        height: 97
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5463917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUpRight01
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 325
+        width: 61
+        height: 91
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.43956044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUpRight02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 115
+        width: 64
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUpRight03
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 418
+        width: 64
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5483871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUpRight04
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 147
+        width: 61
+        height: 89
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.42696628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUpRight05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 17
+        width: 61
+        height: 96
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: MoveUpRight06
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 418
+        width: 61
+        height: 93
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.5483871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

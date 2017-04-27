@@ -35,7 +35,7 @@ public class PathManager
     public void Initialize()
     {
         mChunks.Clear();
-        byte[] bytes = BinaryReadNWrite.ReadAsBytes("bin/" + DefPathFileName);
+        byte[] bytes = BinaryReadNWrite.ReadAsBytes(DefPathFileName);
         if (bytes != null)
         {
             if (bytes.Length < HeadSize + ChunkSize + PtSize)
