@@ -11,7 +11,7 @@ namespace Emitter
         public float Length { get { return (StartPosition - EndPosition).magnitude; } }
         public Vector3[] VertexPosition { get { return mVertexPositions; } }
         public Vector3 StartPosition { get { return LineRenderer.GetPosition(0); } }
-        public Vector3 EndPosition { get { return LineRenderer.GetPosition(LineRenderer.numPositions - 1); } }
+        public Vector3 EndPosition { get { return LineRenderer.GetPosition(LineRenderer.positionCount - 1); } }
 
         public override ProjectileType GetProjectileType()
         {
@@ -28,7 +28,7 @@ namespace Emitter
                 LineRenderer.name = "LineRenderer";
             }
             LineRenderer.useWorldSpace = false;
-            LineRenderer.numPositions = 0;
+            LineRenderer.positionCount = 0;
             mVertexCount = 0;
             SetStartPosition(Vector3.zero);
             SetEndPosition(Vector3.zero);
@@ -86,19 +86,20 @@ namespace Emitter
             LineRenderer.startWidth = width;
             LineRenderer.endWidth = width;
 #else
-            mLaser.SetWidth(width, width);
+            // mLaser.SetWidth(width, width);
+            //Unity 5.6 ReferenceError 
 #endif
         }
 
         public void SetStartPosition(Vector3 position)
         {
-            if (LineRenderer.numPositions < 1) LineRenderer.numPositions = 1;
+            if (LineRenderer.positionCount < 1) LineRenderer.positionCount = 1;
             LineRenderer.SetPosition(0, position);
         }
 
         public void SetEndPosition(Vector3 position)
         {
-            if (LineRenderer.numPositions < 2) LineRenderer.numPositions = 2;
+            if (LineRenderer.positionCount < 2) LineRenderer.positionCount = 2;
             LineRenderer.SetPosition(mVertexCount + 1, position);
         }
 
@@ -112,7 +113,7 @@ namespace Emitter
         {
             mVertexCount = count;
             if (count <= 0) return;
-            LineRenderer.numPositions = count + 2;
+            LineRenderer.positionCount = count + 2;
             mVertexPositions = new Vector3[count];
             for (int i = 0; i < VertexCount; i++)
             {
@@ -120,7 +121,7 @@ namespace Emitter
             }
 #if UNITY_5_5
 #else
-            mLaser.SetVertexCount(count + 2);
+           // mLaser.SetVertexCount(count + 2);
 #endif
         }
 
@@ -137,7 +138,7 @@ namespace Emitter
         {
             if (HitEffect != "")
             {
-                GameObject de = AssetsManager.Singleton.LoadGameObjectByResType(
+                     GameObject de = AssetsManager.Singleton.LoadGameObjectByResType(
                     HitEffect, AssetsManager.RestType2PathName(AssetsManager.ResType.Effect),
                     AssetsManager.ResType.Effect);
                 if (de != null)
