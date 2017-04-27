@@ -8,7 +8,8 @@ public class CharacterBehaviors : ActorBehaivorProvider
     public const int MOVE = 1;
     public const int ATTACK = 2;
     public const int MOVE_ATTACK = 3;
-    public const int DIE = 4;
+    public const int ROLL_OVER = 4;
+    public const int DIE = 5;
 
     public override bool InitializeFSM(ActorBehaviorFSM fsm)
     {
@@ -31,7 +32,7 @@ public class CharacterBehaviors : ActorBehaivorProvider
 
     public override void Reset()
     {
-
+        mRollOverDirection = Vector3.zero;
     }
 
     public static void IdleEnter(Actor ac, ActorBehavior last)
@@ -187,8 +188,20 @@ public class CharacterBehaviors : ActorBehaivorProvider
                     dir = ActorAnimator.LEFT;
                 }
             }
-            character.ActorAnimator_.SwitchAnimation(MOVE, dir);
-            character.transform.position += movement * character.Speed * dt;
+            if (character.ActorAnimator_.CurrentAnimState != ROLL_OVER)
+            {
+                character.ActorAnimator_.SwitchAnimation(MOVE, dir);
+                character.transform.position += movement * character.Speed * dt;
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    mRollOverDirection = movement;
+                    character.ActorAnimator_.SwitchAnimation(ROLL_OVER, dir);
+                }
+            }
+            else
+            {
+                character.transform.position += mRollOverDirection * character.Speed * dt;
+            }
         }
         else
         {
@@ -208,4 +221,6 @@ public class CharacterBehaviors : ActorBehaivorProvider
             character.transform.rotation = newRotatation;
         }
     }
+
+    static Vector3 mRollOverDirection;
 }

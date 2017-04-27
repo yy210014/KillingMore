@@ -47,6 +47,11 @@ public class ActorAnimator
     public virtual void Initialize(Animator animator)
     {
         Animator = animator;
+        RuntimeAnimatorController controller = Animator.runtimeAnimatorController;
+        for (int i = 0; i < controller.animationClips.Length; i++)
+        {
+            mClipMap.Add(controller.animationClips[i].name, controller.animationClips[i]);
+        }
     }
 
     public virtual void ResetPlayback()
@@ -58,13 +63,26 @@ public class ActorAnimator
     {
         if (Animator != null && (mCurrentState != st || mCurrentDirection != dir))
         {
+            string stateName = "";
             if (dir == -1)
             {
-                Animator.Play(GetAnimNameByState(st));
+                stateName = GetAnimNameByState(st);
             }
             else
             {
-                Animator.Play(GetAnimNameByState(st) + "_" + GetAnimNameByDirection(dir));
+                stateName = GetAnimNameByState(st) + "_" + GetAnimNameByDirection(dir);
+            }
+            Animator.Play(stateName);
+            AnimationClip ac = null;
+            if (mClipMap.TryGetValue(stateName, out ac))
+            {
+                if (!ac.isLooping)
+                {
+                    Timer.Singleton.SetSchedule(ac.length, (a) =>
+                    {
+                        mCurrentState = Actor.InvalidActorBehaviorType;//目前写死
+                    });
+                }
             }
             mCurrentState = st;
             mCurrentDirection = dir;
@@ -89,6 +107,8 @@ public class ActorAnimator
                 return "Idle";
             case CharacterBehaviors.MOVE:
                 return "Move";
+            case CharacterBehaviors.ROLL_OVER:
+                return "Roll_Over";
         }
         return Misc.String_Unknown;
     }
@@ -109,11 +129,11 @@ public class ActorAnimator
                 return "Up_Left";
             case UP_RIGHT:
                 return "Up_Right";
-                
         }
         return "";
     }
 
     protected int mCurrentState = Actor.InvalidActorBehaviorType;
     protected int mCurrentDirection = Actor.InvalidActorBehaviorType;
+    Dictionary<string, AnimationClip> mClipMap = new Dictionary<string, AnimationClip>();
 }
