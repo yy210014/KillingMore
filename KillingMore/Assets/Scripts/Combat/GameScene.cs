@@ -391,9 +391,6 @@ public class GameScene
     float mElapsed = 0;
     Vector3[] mSpawnPts;
     Quaternion[] mSpawnerRots;
-    int mCurrentWaveIndex;
-    float mDelay2Push = 0;
-    int mWave_Delay2Push = -1;
     // view clip
     float mMinViewX;
     float mMaxViewX;

@@ -37,4 +37,45 @@ public class Battle : GameState
         SoundEffectManager.Singleton.OnGameEnd();
     }
     #endregion
+
+
+#if UNITY_EDITOR
+    void OnGUI()
+    {
+        if (Game.Singleton != null && Game.Singleton.DebugStringOnScreen)
+        {
+            int x = 10;
+            int y = 10;
+            int w = 300;
+            int h = 60;
+            int dy = 20;
+
+            GUI.color = new Color(1.0f, 1.0f, 1.0f);
+            Rect rc = new Rect();
+            rc.Set(x, y, w, h);
+            GUI.Label(rc, "Elapsed " + GameScene.Singleton.Elapsed);
+            rc.Set(x, y + dy, w, h);
+
+            int i = 2;
+            Game.IteraterAllDebugStrings((s) =>
+                  {
+                      rc.Set(x, y + i * dy, w, h);
+                      GUI.Label(rc, "Debug : " + s);
+                      ++i;
+                  });
+
+            x = 200;
+            y = 10;
+            GUI.color = new Color(1.0f, 0, 0);
+            i = 0;
+            Game.IteraterAllErrorStrings((s) =>
+            {
+                rc.Set(x, y + i * dy, w, h);
+                GUI.Label(rc, "Error : " + s);
+                ++i;
+            });
+        }
+    }
+#endif
+
 }

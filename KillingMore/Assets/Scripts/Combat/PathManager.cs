@@ -71,8 +71,7 @@ public class PathManager
             {
                 ReadChunk(bytes, ref offset);
             }
-
-            Game.DebugString = "Loaded " + num + " paths.";
+            // Game.DebugString = "Loaded " + num + " paths.";
         }
         else
         {
@@ -100,11 +99,8 @@ public class PathManager
                         , ck.Pts[j].Behavior, ck.Pts[j].BehaviorDuration, ck.Pts[j].KeyPt,
                         ck.Pts[j].Disturbance));
                 }
-
                 NPPath path = new NPPath(pts);
-
-                Game.DebugString = "Created path " + name;
-
+               // Game.DebugString = "Created path " + name;
                 return path;
             }
         }

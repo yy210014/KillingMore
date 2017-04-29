@@ -33,6 +33,7 @@ public class CharacterBehaviors : ActorBehaivorProvider
     public override void Reset()
     {
         mRollOverDirection = Vector3.zero;
+        mRollOverTime = 0;
     }
 
     public static void IdleEnter(Actor ac, ActorBehavior last)
@@ -192,21 +193,28 @@ public class CharacterBehaviors : ActorBehaivorProvider
             {
                 character.ActorAnimator_.SwitchAnimation(MOVE, dir);
                 character.transform.position += movement * character.Speed * dt;
-                if (Input.GetKeyDown(KeyCode.Space))
+                if (Input.GetKey(KeyCode.Space) && mRollOverTime <= 0)
                 {
                     mRollOverDirection = movement;
+                    mRollOverTime = character.RollOverCD;
                     character.ActorAnimator_.SwitchAnimation(ROLL_OVER, dir);
                 }
-            }
-            else
-            {
-                character.transform.position += mRollOverDirection * character.Speed * dt;
             }
         }
         else
         {
-            character.ActorAnimator_.SwitchAnimation(IDLE);
+            if (character.ActorAnimator_.CurrentAnimState != ROLL_OVER)
+            {
+                character.ActorAnimator_.SwitchAnimation(IDLE);
+            }
         }
+        if (character.ActorAnimator_.CurrentAnimState == ROLL_OVER)
+        {
+            character.transform.position += mRollOverDirection * character.Speed * dt;
+        }
+        //RollOver cd
+        if (mRollOverTime > 0) mRollOverTime -= dt;
+        if (mRollOverTime != 0) Game.DebugString = "RollOverCooldown " + mRollOverTime;
     }
 
     static void Turning(Character character)
@@ -223,4 +231,5 @@ public class CharacterBehaviors : ActorBehaivorProvider
     }
 
     static Vector3 mRollOverDirection;
+    static float mRollOverTime;
 }

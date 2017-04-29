@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class GameState : MonoBehaviour {
+public abstract class GameState : MonoBehaviour
+{
 
     public enum States
     {
@@ -27,23 +28,21 @@ public abstract class GameState : MonoBehaviour {
 
     public abstract void PostInitialize();
 
-	// Use this for initialization
-	public void Start () {
-        Debug.Log("-->Start GameState");
+    // Use this for initialization
+    public void Start()
+    {
         Game.Singleton.OnGameStateStart(this);
         Initialize();
+    }
 
-	}
-	
     //// Update is called once per frame
     //public virtual void Update () {
-	
+
     //}
 
     public bool OnGameUpdate()
     {
         mEventProc.DispatchAll();
-
         return DoGameUpdate();
     }
 
@@ -52,7 +51,6 @@ public abstract class GameState : MonoBehaviour {
     public virtual void OnDestroy()
     {
         mEventProc.Reset();
-
         PostUninitialize();
     }
 

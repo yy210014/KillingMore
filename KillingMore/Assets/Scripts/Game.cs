@@ -139,9 +139,6 @@ public class Game : MonoBehaviour
         }
     }
 
-    static List<string> msDebugStrings = new List<string>();
-    static List<string> msErrorStrings = new List<string>();
-
     public static void IteraterAllDebugStrings(System.Action<string> ac)
     {
         for (int i = 0; i < msDebugStrings.Count; ++i)
@@ -357,7 +354,6 @@ public class Game : MonoBehaviour
     }
 
     const float MinLoadingTime = 2.8f;
-    float mLoadingCountdown = 0;
 
     public IEnumerator SyncLoadLevel(string levelName, bool gcCollect, System.Action<string> cb = null)
     {
@@ -438,7 +434,6 @@ public class Game : MonoBehaviour
     GameState mCurrentState;
 
     static Game msSingleton = null;
-    private bool isCountDown = false;
     public int StaminaTime = 0;
     public int ExtremeTime = 30 * 60;
     ///===================================================================================
@@ -454,6 +449,8 @@ public class Game : MonoBehaviour
     private List<DelayedQueueItem> mDelayed = new List<DelayedQueueItem>();
     private List<DelayedQueueItem> mCurrentDelayed = new List<DelayedQueueItem>();
     private List<Action> mCurrentActions = new List<Action>();
+    static List<string> msDebugStrings = new List<string>();
+    static List<string> msErrorStrings = new List<string>();
 
 
     public void QueueOnMainThread(Action action)

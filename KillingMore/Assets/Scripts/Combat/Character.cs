@@ -6,6 +6,7 @@ using Emitter;
 public class Character : Actor
 {
     public SpriteRenderer SpriteRenderer { get; private set; }
+    public float RollOverCD { get; set; }
 
     public override ActorType GetActorType()
     {
@@ -30,6 +31,7 @@ public class Character : Actor
         mBehaviorProvider = new CharacterBehaviors();
         mBehaviorProvider.InitializeFSM(mBehaviorFSM);
         mBehaviorFSM.Start(0);
+        RollOverCD = 5; 
     }
 
     public override void OnGameUpdate(float dt)
