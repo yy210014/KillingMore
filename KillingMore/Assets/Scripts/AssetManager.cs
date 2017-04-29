@@ -24,6 +24,7 @@ public class AssetsManager
         Emitter,
         Projectile,
         Effect,
+        Obstacle,
         SoundEffect,
         UIObject,
         Music,
@@ -42,6 +43,8 @@ public class AssetsManager
                 return "Prefabs/Projectiles";
             case ResType.Effect:
                 return "Prefabs/Effects";
+            case ResType.Obstacle:
+                return "Prefabs/Obstacles";
             case ResType.UIObject:
                 return "Prefabs/UI";
             case ResType.SoundEffect:
@@ -63,6 +66,8 @@ public class AssetsManager
                 return ResType.Emitter;
             case "Projectile":
                 return ResType.Projectile;
+            case "Obstacle":
+                return ResType.Obstacle;
             case "SoundEffect":
                 return ResType.SoundEffect;
             case "UI":

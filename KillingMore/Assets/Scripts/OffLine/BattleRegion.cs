@@ -28,10 +28,12 @@ public class BattleRegion : MonoBehaviour
             Vector3 offset = tf.localPosition;
             jd["Name"] = tf.gameObject.name;
             jd["ActorType"] = ac.GetActorType().ToString();
-            jd["X"] = offset.x;
-            jd["Y"] = offset.y;
-            jd["Z"] = offset.z;
-            jd["Rot"] = tf.rotation.eulerAngles.y;
+            jd["PosX"] = offset.x;
+            jd["PosY"] = offset.y;
+            jd["PosZ"] = offset.z;
+            jd["RotX"] = tf.rotation.eulerAngles.x;
+            jd["RotY"] = tf.rotation.eulerAngles.y;
+            jd["RotZ"] = tf.rotation.eulerAngles.z;
             string data = jd.ToJson();
             sw.WriteLine(data);
         }

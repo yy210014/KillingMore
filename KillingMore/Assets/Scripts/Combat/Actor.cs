@@ -39,6 +39,7 @@ public class Actor : MonoBehaviour
         Invalid = 0,
         Character,
         Enemy,
+        Obstacle,
         // TODO
     }
 

@@ -86,14 +86,16 @@ public class GameScene
                 ActorSpawnSchedule ass = new ActorSpawnSchedule();
                 ass.mPrefabName = (string)jd["Name"];
                 ass.mActorType = (Actor.ActorType)System.Enum.Parse(typeof(Actor.ActorType), (string)jd["ActorType"]);
-                float x = (float)((double)jd["X"]);
-                float y = (float)((double)jd["Y"]);
-                float z = (float)((double)jd["Z"]);
+                float posx = (float)((double)jd["PosX"]);
+                float posy = (float)((double)jd["PosY"]);
+                float posz = (float)((double)jd["PosZ"]);
                 Vector3 relPos = Vector3.zero;
-                relPos.Set(x, y, z);
+                relPos.Set(posx, posy, posz);
                 ass.mRelPos = relPos;
-                float y_rot = (float)((double)jd["Rot"]);
-                ass.mRot = Quaternion.Euler(0, y_rot, 0);
+                float rotX = (float)((double)jd["RotX"]);
+                float rotY = (float)((double)jd["RotY"]);
+                float rotZ = (float)((double)jd["RotZ"]);
+                ass.mRot = Quaternion.Euler(rotX, rotY, rotZ);
                 mRegionSchedule.Add(ass);
             }
         }
