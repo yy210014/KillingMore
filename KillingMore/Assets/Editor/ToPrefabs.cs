@@ -18,7 +18,7 @@ public class ToPrefabs : EditorWindow {
     }
     private void Go2Prefabs()
     {
-        if(Selection.activeGameObject!=null)
+        if(Selection.gameObjects!=null)
         PrefabUtility.CreatePrefab("Assets/"+ Selection.activeGameObject.name+ ".prefab", Selection.activeGameObject, ReplacePrefabOptions.Default);
         
     }
