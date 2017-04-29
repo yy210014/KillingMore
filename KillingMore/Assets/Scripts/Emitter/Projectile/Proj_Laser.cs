@@ -11,7 +11,7 @@ namespace Emitter
         public float Length { get { return (StartPosition - EndPosition).magnitude; } }
         public Vector3[] VertexPosition { get { return mVertexPositions; } }
         public Vector3 StartPosition { get { return LineRenderer.GetPosition(0); } }
-        public Vector3 EndPosition { get { return LineRenderer.GetPosition(LineRenderer.positionCount - 1); } }
+        public Vector3 EndPosition { get { return LineRenderer.GetPosition(LineRenderer.numPositions - 1); } }
 
         public override ProjectileType GetProjectileType()
         {
@@ -28,7 +28,7 @@ namespace Emitter
                 LineRenderer.name = "LineRenderer";
             }
             LineRenderer.useWorldSpace = false;
-            LineRenderer.positionCount = 0;
+            LineRenderer.numPositions = 0;
             mVertexCount = 0;
             SetStartPosition(Vector3.zero);
             SetEndPosition(Vector3.zero);
@@ -92,13 +92,13 @@ namespace Emitter
 
         public void SetStartPosition(Vector3 position)
         {
-            if (LineRenderer.positionCount < 1) LineRenderer.positionCount = 1;
+            if (LineRenderer.numPositions < 1) LineRenderer.numPositions = 1;
             LineRenderer.SetPosition(0, position);
         }
 
         public void SetEndPosition(Vector3 position)
         {
-            if (LineRenderer.positionCount < 2) LineRenderer.positionCount = 2;
+            if (LineRenderer.numPositions < 2) LineRenderer.numPositions = 2;
             LineRenderer.SetPosition(mVertexCount + 1, position);
         }
 
@@ -112,7 +112,7 @@ namespace Emitter
         {
             mVertexCount = count;
             if (count <= 0) return;
-            LineRenderer.positionCount = count + 2;
+            LineRenderer.numPositions = count + 2;
             mVertexPositions = new Vector3[count];
             for (int i = 0; i < VertexCount; i++)
             {
