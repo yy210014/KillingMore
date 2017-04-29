@@ -1,0 +1,852 @@
+fileFormatVersion: 2
+guid: b214e95545e5d054d992a0d12ac7de49
+timeCreated: 1493459027
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: noob-diagonal-MoveUpRight01
+    21300002: noob-diagonal-MoveUpRight02
+    21300004: noob-diagonal-MoveUpRight03
+    21300006: noob-diagonal-MoveUpRight04
+    21300008: noob-diagonal-MoveUpRight05
+    21300010: noob-diagonal-MoveUpRight06
+    21300012: noob-diagonal-RollOverUpLeft01
+    21300014: noob-diagonal-RollOverUpLeft02
+    21300016: noob-diagonal-RollOverUpLeft03
+    21300018: noob-diagonal-RollOverUpLeft04
+    21300020: noob-diagonal-RollOverUpLeft05
+    21300022: noob-diagonal-RollOverUpLeft06
+    21300024: noob-diagonal-RollOverUpLeft07
+    21300026: noob-diagonal-RollOverUpLeft08
+    21300028: noob-down-MoveDown01
+    21300030: noob-down-MoveDown02
+    21300032: noob-down-MoveDown03
+    21300034: noob-down-MoveDown04
+    21300036: noob-down-MoveDown05
+    21300038: noob-down-MoveDown06
+    21300040: noob-down-RollOverDown01
+    21300042: noob-down-RollOverDown02
+    21300044: noob-down-RollOverDown03
+    21300046: noob-down-RollOverDown04
+    21300048: noob-down-RollOverDown05
+    21300050: noob-down-RollOverDown06
+    21300052: noob-down-RollOverDown07
+    21300054: noob-down-RollOverDown08
+    21300056: noob-left&right-MoveRight01
+    21300058: noob-left&right-MoveRight02
+    21300060: noob-left&right-MoveRight03
+    21300062: noob-left&right-MoveRight04
+    21300064: noob-left&right-MoveRight05
+    21300066: noob-left&right-MoveRight06
+    21300068: noob-left&right-RollOverLeft01
+    21300070: noob-left&right-RollOverLeft02
+    21300072: noob-left&right-RollOverLeft03
+    21300074: noob-left&right-RollOverLeft04
+    21300076: noob-left&right-RollOverLeft05
+    21300078: noob-left&right-RollOverLeft06
+    21300080: noob-left&right-RollOverLeft07
+    21300082: noob-left&right-RollOverLeft08
+    21300084: noob-up-MoveUp01
+    21300086: noob-up-MoveUp02
+    21300088: noob-up-MoveUp03
+    21300090: noob-up-MoveUp04
+    21300092: noob-up-MoveUp05
+    21300094: noob-up-MoveUp06
+    21300096: noob-up-RollOverUp01
+    21300098: noob-up-RollOverUp02
+    21300100: noob-up-RollOverUp03
+    21300102: noob-up-RollOverUp04
+    21300104: noob-up-RollOverUp05
+    21300106: noob-up-RollOverUp06
+    21300108: noob-up-RollOverUp07
+    21300110: noob-up-RollOverUp08
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: noob-diagonal-MoveUpRight01
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 150
+        width: 61
+        height: 91
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.43956044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-MoveUpRight02
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 237
+        width: 64
+        height: 96
+      alignment: 9
+      pivot: {x: 0.5, y: 0.53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-MoveUpRight03
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 332
+        width: 64
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5483871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-MoveUpRight04
+      rect:
+        serializedVersion: 2
+        x: 270
+        y: 58
+        width: 61
+        height: 89
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.42696628}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-MoveUpRight05
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 256
+        width: 61
+        height: 96
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.53125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-MoveUpRight06
+      rect:
+        serializedVersion: 2
+        x: 412
+        y: 231
+        width: 61
+        height: 93
+      alignment: 9
+      pivot: {x: 0.52459013, y: 0.5483871}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-RollOverUpLeft01
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 427
+        width: 75
+        height: 84
+      alignment: 9
+      pivot: {x: 0.53333336, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-RollOverUpLeft02
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 244
+        width: 72
+        height: 83
+      alignment: 9
+      pivot: {x: 0.5416667, y: 0.4939759}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-RollOverUpLeft03
+      rect:
+        serializedVersion: 2
+        x: 475
+        y: 227
+        width: 77
+        height: 59
+      alignment: 9
+      pivot: {x: 0.5194805, y: 0.2881356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-RollOverUpLeft04
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 316
+        width: 67
+        height: 57
+      alignment: 9
+      pivot: {x: 0.4477612, y: 0.2631579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-RollOverUpLeft05
+      rect:
+        serializedVersion: 2
+        x: 401
+        y: 77
+        width: 70
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5285714, y: 0.54545456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-RollOverUpLeft06
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 156
+        width: 77
+        height: 73
+      alignment: 9
+      pivot: {x: 0.48051947, y: 0.5753425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-RollOverUpLeft07
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 383
+        width: 74
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7924528}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-diagonal-RollOverUpLeft08
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 434
+        width: 69
+        height: 77
+      alignment: 9
+      pivot: {x: 0.42028984, y: 0.54545456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-MoveDown01
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 353
+        width: 70
+        height: 88
+      alignment: 9
+      pivot: {x: 0.4857143, y: 0.39772728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-MoveDown02
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 411
+        width: 67
+        height: 100
+      alignment: 9
+      pivot: {x: 0.5074627, y: 0.47}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-MoveDown03
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 213
+        width: 66
+        height: 97
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5463917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-MoveDown04
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 328
+        width: 69
+        height: 88
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.39772728}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-MoveDown05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 31
+        width: 67
+        height: 94
+      alignment: 9
+      pivot: {x: 0.5074627, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-MoveDown06
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 312
+        width: 66
+        height: 97
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5463917}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-RollOverDown01
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 61
+        width: 66
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-RollOverDown02
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 221
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35384616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-RollOverDown03
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 288
+        width: 66
+        height: 70
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44285715}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-RollOverDown04
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 50
+        width: 66
+        height: 84
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-RollOverDown05
+      rect:
+        serializedVersion: 2
+        x: 557
+        y: 289
+        width: 66
+        height: 69
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6086956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-RollOverDown06
+      rect:
+        serializedVersion: 2
+        x: 634
+        y: 363
+        width: 66
+        height: 69
+      alignment: 9
+      pivot: {x: 0.5, y: 0.6086956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-RollOverDown07
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 375
+        width: 72
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7368421}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-down-RollOverDown08
+      rect:
+        serializedVersion: 2
+        x: 667
+        y: 434
+        width: 66
+        height: 77
+      alignment: 9
+      pivot: {x: 0.5, y: 0.54545456}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-MoveRight01
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 45
+        width: 64
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44943818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-MoveRight02
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 35
+        width: 64
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-MoveRight03
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 156
+        width: 64
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5505618}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-MoveRight04
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 149
+        width: 64
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.44943818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-MoveRight05
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 326
+        width: 64
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5222222}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-MoveRight06
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 136
+        width: 64
+        height: 89
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5505618}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-RollOverLeft01
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 427
+        width: 81
+        height: 84
+      alignment: 9
+      pivot: {x: 0.4814815, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-RollOverLeft02
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 443
+        width: 92
+        height: 68
+      alignment: 9
+      pivot: {x: 0.5, y: 0.38235295}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-RollOverLeft03
+      rect:
+        serializedVersion: 2
+        x: 735
+        y: 446
+        width: 78
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35384616}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-RollOverLeft04
+      rect:
+        serializedVersion: 2
+        x: 489
+        y: 360
+        width: 75
+        height: 69
+      alignment: 9
+      pivot: {x: 0.5733333, y: 0.6086956}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-RollOverLeft05
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 127
+        width: 77
+        height: 84
+      alignment: 9
+      pivot: {x: 0.5584416, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-RollOverLeft06
+      rect:
+        serializedVersion: 2
+        x: 815
+        y: 438
+        width: 66
+        height: 73
+      alignment: 9
+      pivot: {x: 0.59090906, y: 0.5753425}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-RollOverLeft07
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 446
+        width: 73
+        height: 65
+      alignment: 9
+      pivot: {x: 0.63013697, y: 0.64615387}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-left&right-RollOverLeft08
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 127
+        width: 70
+        height: 84
+      alignment: 9
+      pivot: {x: 0.6142857, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-MoveUp01
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 334
+        width: 69
+        height: 91
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.48351648}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-MoveUp02
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 240
+        width: 66
+        height: 90
+      alignment: 9
+      pivot: {x: 0.5, y: 0.47777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-MoveUp03
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 322
+        width: 66
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.50537634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-MoveUp04
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 230
+        width: 69
+        height: 90
+      alignment: 9
+      pivot: {x: 0.47826087, y: 0.47777778}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-MoveUp05
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 418
+        width: 69
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5217391, y: 0.49462366}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-MoveUp06
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 418
+        width: 66
+        height: 93
+      alignment: 9
+      pivot: {x: 0.5, y: 0.50537634}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-RollOverUp01
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 431
+        width: 66
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-RollOverUp02
+      rect:
+        serializedVersion: 2
+        x: 593
+        y: 438
+        width: 72
+        height: 73
+      alignment: 9
+      pivot: {x: 0.5, y: 0.4520548}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-RollOverUp03
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 296
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5, y: 0.3846154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-RollOverUp04
+      rect:
+        serializedVersion: 2
+        x: 844
+        y: 324
+        width: 66
+        height: 53
+      alignment: 9
+      pivot: {x: 0.5, y: 0.24528302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-RollOverUp05
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 229
+        width: 66
+        height: 65
+      alignment: 9
+      pivot: {x: 0.5, y: 0.61538464}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-RollOverUp06
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 379
+        width: 66
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7017544}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-RollOverUp07
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 324
+        width: 66
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5, y: 0.7017544}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    - serializedVersion: 2
+      name: noob-up-RollOverUp08
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 363
+        width: 66
+        height: 69
+      alignment: 9
+      pivot: {x: 0.5, y: 0.5797101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: -1
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
