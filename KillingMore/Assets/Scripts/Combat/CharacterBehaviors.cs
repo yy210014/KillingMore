@@ -170,7 +170,8 @@ public class CharacterBehaviors : ActorBehaivorProvider
                 {
                     mRollOverDirection = movement;
                     mRollOverTime = character.RollOverCD;
-                    character.ActorAnimator_.SwitchAnimation(ROLL_OVER, dir);
+                    int rd = CalculateRollOverDirection(character, movement);
+                    character.ActorAnimator_.SwitchAnimation(ROLL_OVER, rd);
                 }
             }
         }
@@ -229,6 +230,45 @@ public class CharacterBehaviors : ActorBehaivorProvider
         return dir;
     }
 
+    static int CalculateRollOverDirection(Character character, Vector3 movement)
+    {
+        int dir = 0;
+        float dr = Vector3.Dot(Vector3.right, movement.normalized);
+        float db = Vector3.Dot(Vector3.back, movement.normalized);
+        if (movement.normalized == Vector3.forward)
+        {
+            dir = ActorAnimator.UP;
+        }
+        else if (movement.normalized == Vector3.back)
+        {
+            dir = ActorAnimator.DOWN;
+        }
+        else if (movement.normalized == Vector3.left)
+        {
+            dir = ActorAnimator.LEFT;
+        }
+        else if (movement.normalized == Vector3.right)
+        {
+            dir = ActorAnimator.RIGHT;
+        }
+        else if (dr > 0.5f && dr < 1)
+        {
+            dir = ActorAnimator.UP_RIGHT;
+            if (db > 0.5f && db < 1)
+            {
+                dir = ActorAnimator.RIGHT;
+            }
+        }
+        else if (dr > -1f && dr < -0.5f)
+        {
+            dir = ActorAnimator.UP_LEFT;
+            if (db > 0.5f && db < 1)
+            {
+                dir = ActorAnimator.LEFT;
+            }
+        }
+        return dir;
+    }
     static Vector3 mRollOverDirection;
     static float mRollOverTime;
 }
