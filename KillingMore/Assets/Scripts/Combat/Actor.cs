@@ -60,7 +60,7 @@ public class Actor : MonoBehaviour
     public ActorData Force { get { return mForce; } set { mForce = value; } }
     public ActorData Def { get { return mDef; } set { mDef = value; } }
     public ActorData Hp { get { return mHp; } set { mHp = value; } }
-    public float Speed = 2f;          
+    public float Speed = 2f;
 
     public int FactionId { get { return mFactionId; } }
     public bool TheSameFactionOf(Actor ac) { return FactionId == ac.FactionId; }
@@ -131,7 +131,7 @@ public class Actor : MonoBehaviour
         }
     }
 
-    public void InitialAddEmitter(Emitter_Basic be)
+    public virtual void InitialAddEmitter(Emitter_Basic be)
     {
         if (be != null && !mEmitters.Contains(be))
         {
@@ -142,11 +142,11 @@ public class Actor : MonoBehaviour
         }
     }
 
-    public void InitialAddEmitter(Emitter_Basic be, Vector3 localOffset, Quaternion localRot)
+    public virtual void InitialAddEmitter(Emitter_Basic be, Transform localTran, Vector3 localOffset, Quaternion localRot)
     {
         if (be != null && !mEmitters.Contains(be))
         {
-            be.transform.parent = transform;
+            be.transform.parent = localTran;
             be.transform.localPosition = localOffset;
             be.transform.localRotation = localRot;
             mEmitters.Add(be);

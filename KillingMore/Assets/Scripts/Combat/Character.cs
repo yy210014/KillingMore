@@ -5,6 +5,9 @@ using Emitter;
 
 public class Character : Actor
 {
+    public Transform LeftPoint;
+    public Transform RightPoint;
+
     public SpriteRenderer SpriteRenderer { get; private set; }
     public float RollOverCD { get; set; }
 
