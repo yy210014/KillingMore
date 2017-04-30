@@ -1,0 +1,47 @@
+
+AR15Rifle.png
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+AR15Rifle01
+  rotate: false
+  xy: 2, 6
+  size: 84, 40
+  orig: 92, 40
+  offset: 8, 0
+  index: -1
+AR15Rifle04
+  rotate: false
+  xy: 2, 6
+  size: 84, 40
+  orig: 92, 40
+  offset: 8, 0
+  index: -1
+AR15Rifle02
+  rotate: false
+  xy: 88, 6
+  size: 80, 40
+  orig: 92, 40
+  offset: 8, 0
+  index: -1
+AR15Rifle03
+  rotate: false
+  xy: 170, 6
+  size: 80, 40
+  orig: 92, 40
+  offset: 0, 0
+  index: -1
+AR15RifleFire01
+  rotate: false
+  xy: 302, 14
+  size: 36, 32
+  orig: 44, 48
+  offset: 4, 8
+  index: -1
+AR15RifleFire02
+  rotate: true
+  xy: 252, 2
+  size: 44, 48
+  orig: 44, 48
+  offset: 0, 0
+  index: -1
