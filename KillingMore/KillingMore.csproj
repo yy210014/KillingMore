@@ -105,6 +105,7 @@
     <Compile Include="Assets\Scripts\Combat\CharacterBehaviors.cs" />
     <Compile Include="Assets\Scripts\Combat\GamePreload.cs" />
     <Compile Include="Assets\Scripts\Combat\GameScene.cs" />
+    <Compile Include="Assets\Scripts\Combat\Obstacle.cs" />
     <Compile Include="Assets\Scripts\Combat\PathManager.cs" />
     <Compile Include="Assets\Scripts\Common\BinaryReadNWrite.cs" />
     <Compile Include="Assets\Scripts\Common\Misc.cs" />
