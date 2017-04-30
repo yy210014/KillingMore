@@ -109,6 +109,8 @@ public class ActorAnimator
                 return "Move";
             case CharacterBehaviors.ROLL_OVER:
                 return "Roll_Over";
+            case CharacterBehaviors.Turn:
+                return "Turn";
         }
         return Misc.String_Unknown;
     }

@@ -9,7 +9,8 @@ public class CharacterBehaviors : ActorBehaivorProvider
     public const int ATTACK = 2;
     public const int MOVE_ATTACK = 3;
     public const int ROLL_OVER = 4;
-    public const int DIE = 5;
+    public const int Turn = 5;
+    public const int DIE = 6;
 
     public override bool InitializeFSM(ActorBehaviorFSM fsm)
     {
@@ -73,7 +74,6 @@ public class CharacterBehaviors : ActorBehaivorProvider
         float dt = ac.SelfTimeScale * GameScene.Singleton.TimeDelta;
         Character ca = ac as Character;
         Move(ca, dt);
-        //  Turning(ca);
         return MOVE;
     }
 
@@ -115,7 +115,6 @@ public class CharacterBehaviors : ActorBehaivorProvider
         float dt = ac.SelfTimeScale * GameScene.Singleton.TimeDelta;
         Character ca = ac as Character;
         Move(ca, dt);
-        //  Turning(ca);
         ca.IteraterEmiters((be) =>
         {
             be.OnGameUpdate(dt);
@@ -148,47 +147,21 @@ public class CharacterBehaviors : ActorBehaivorProvider
 
     static void Move(Character character, float dt)
     {
+        Debug.DrawRay(character.transform.position, Vector3.forward);
+        Debug.DrawRay(character.transform.position, Vector3.back);
+        Debug.DrawRay(character.transform.position, Vector3.left);
+        Debug.DrawRay(character.transform.position, Vector3.right);
+        Debug.DrawRay(character.transform.position, new Vector3(0.7f, 0, 0.7f));
+        Debug.DrawRay(character.transform.position, new Vector3(-0.7f, 0, -0.7f));
+        Debug.DrawRay(character.transform.position, new Vector3(-0.7f, 0, 0.7f));
+        Debug.DrawRay(character.transform.position, new Vector3(0.7f, 0, -0.7f));
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
         Vector3 movement = Vector3.zero;
         movement.Set(h, 0f, v);
+        int dir = CalculateDirection(character);
         if (movement != Vector3.zero)
         {
-            int dir = 0;
-            float dr = Vector3.Dot(Vector3.right, movement.normalized);
-            float db = Vector3.Dot(Vector3.back, movement.normalized);
-            if (movement.normalized == Vector3.forward)
-            {
-                dir = ActorAnimator.UP;
-            }
-            else if (movement.normalized == Vector3.back)
-            {
-                dir = ActorAnimator.DOWN;
-            }
-            else if (movement.normalized == Vector3.left)
-            {
-                dir = ActorAnimator.LEFT;
-            }
-            else if (movement.normalized == Vector3.right)
-            {
-                dir = ActorAnimator.RIGHT;
-            }
-            else if (dr > 0.5f && dr < 1)
-            {
-                dir = ActorAnimator.UP_RIGHT;
-                if (db > 0.5f && db < 1)
-                {
-                    dir = ActorAnimator.RIGHT;
-                }
-            }
-            else if (dr > -1f && dr < -0.5f)
-            {
-                dir = ActorAnimator.UP_LEFT;
-                if (db > 0.5f && db < 1)
-                {
-                    dir = ActorAnimator.LEFT;
-                }
-            }
             if (character.ActorAnimator_.CurrentAnimState != ROLL_OVER)
             {
                 character.ActorAnimator_.SwitchAnimation(MOVE, dir);
@@ -208,6 +181,10 @@ public class CharacterBehaviors : ActorBehaivorProvider
                 character.ActorAnimator_.SwitchAnimation(IDLE);
             }
         }
+        if (character.ActorAnimator_.CurrentAnimState == IDLE || character.ActorAnimator_.CurrentAnimState == Turn)
+        {
+            character.ActorAnimator_.SwitchAnimation(Turn, dir);
+        }
         if (character.ActorAnimator_.CurrentAnimState == ROLL_OVER)
         {
             character.transform.position += mRollOverDirection * character.Speed * dt;
@@ -217,17 +194,39 @@ public class CharacterBehaviors : ActorBehaivorProvider
         if (mRollOverTime != 0) Game.DebugString = "RollOverCooldown " + mRollOverTime;
     }
 
-    static void Turning(Character character)
+    static int CalculateDirection(Character character)
     {
-        Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit floorHit;
-        if (Physics.Raycast(camRay, out floorHit, 1 << LayerMask.NameToLayer("Background")))
+        Vector3 mp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        float angle = Polar.Angle2((mp - character.transform.position).normalized, Vector3.forward);
+        angle = angle < 0 ? angle + 360 : angle;
+        int dir = 0;
+        float off8 = 360 / 8;
+        float off16 = 360 / 16;
+        if (angle > off8 * 1 - off16 && angle <= off8 * 1 + off16)
         {
-            Vector3 playerToMouse = floorHit.point - character.transform.position;
-            playerToMouse.y = 0f;
-            Quaternion newRotatation = Quaternion.LookRotation(playerToMouse);
-            character.transform.rotation = newRotatation;
+            dir = ActorAnimator.UP_RIGHT;
         }
+        else if (angle > off8 * 2 - off16 && angle <= off8 * 2 + off16)
+        {
+            dir = ActorAnimator.RIGHT;
+        }
+        else if (angle > off8 * 3 - off16 && angle <= off8 * 5 + off16)
+        {
+            dir = ActorAnimator.DOWN;
+        }
+        else if (angle > off8 * 6 - off16 && angle <= off8 * 6 + off16)
+        {
+            dir = ActorAnimator.LEFT;
+        }
+        else if (angle > off8 * 7 - off16 && angle <= off8 * 7 + off16)
+        {
+            dir = ActorAnimator.UP_LEFT;
+        }
+        else
+        {
+            dir = ActorAnimator.UP;
+        }
+        return dir;
     }
 
     static Vector3 mRollOverDirection;
