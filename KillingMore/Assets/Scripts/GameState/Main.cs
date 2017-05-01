@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Main : GameState
 {
+    public GameObject MainPanel;
+    public GameObject MultiplayerPanel;
+    public GameObject OptionPanel;
+    public GameObject ExitPanel;
 
     #region 父类方法
     public override States GetStateEnum()
@@ -40,11 +44,34 @@ public class Main : GameState
     /// <summary>
     /// 开始游戏
     /// </summary>
-    public void StartGame()
+    public void OnStartGame()
     {
         Game.Singleton.SwitchScene("Battle");
     }
 
+    public void OnMultiplayer()
+    {
+        MainPanel.SetActive(false);
+        MultiplayerPanel.SetActive(true);
+    }
+
+    public void OnOption()
+    {
+    }
+
+    public void OnExit()
+    {
+    }
+
+    public void OnHost()
+    {
+
+    }
+
+    public void OnJion()
+    {
+
+    }
     #endregion
 
 }
