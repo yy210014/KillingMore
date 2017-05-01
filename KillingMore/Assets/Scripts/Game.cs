@@ -31,6 +31,12 @@ public class Game : MonoBehaviour
     [Tooltip("出生点在屏幕上的归一化坐标, right_low")]
     public Vector2 SpawnPoint_RightLow = new Vector2(1.0f, 0.75f);
 
+    public InputAction SystemMenu = new InputAction();
+    public InputAction CharacterMenu = new InputAction();
+    public InputAction UseItem = new InputAction();
+    public InputAction UseAbility = new InputAction();
+    public InputAction Reload = new InputAction();
+
     public bool DebugStringOnScreen = true;
     public const int MaxDebugStringOnScreen = 10;
 
@@ -286,6 +292,28 @@ public class Game : MonoBehaviour
                 mLoopDT = 0;
                 GetComponent<AudioSource>().Play();
             }
+        }
+
+        //Input
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SystemMenu.Call();
+        }
+        else if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            CharacterMenu.Call();
+        }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            UseItem.Call();
+        }
+        else if (Input.GetKeyDown(KeyCode.E))
+        {
+            UseAbility.Call();
+        }
+        else if (Input.GetKeyDown(KeyCode.R))
+        {
+            Reload.Call();
         }
     }
 

@@ -241,7 +241,7 @@ namespace Emitter
         public virtual void SetLocomotion(float initialVeloc, float acc, float accDuration)
         {
             CurvePath cp = new CurvePath();
-            Vector3 forward = transform.right;
+            Vector3 forward = transform.forward;
             CurvePath.ConfigPath(cp, transform, forward * initialVeloc, forward * acc, accDuration);
             if (mMotor == null)
             {

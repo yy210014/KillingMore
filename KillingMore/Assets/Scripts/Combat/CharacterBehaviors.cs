@@ -96,6 +96,10 @@ public class CharacterBehaviors : ActorBehaivorProvider
         Character ca = ac as Character;
         ca.IteraterEmiters((be) =>
         {
+            Vector3 mp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 dir = (mp - be.transform.position).normalized;
+            Quaternion Rot = Quaternion.LookRotation(dir.normalized, Vector3.up);
+            be.transform.rotation = Quaternion.Euler(Vector3.up * Rot.eulerAngles.y);
             be.OnGameUpdate(dt);
         });
         return ATTACK;
@@ -117,6 +121,10 @@ public class CharacterBehaviors : ActorBehaivorProvider
         Move(ca, dt);
         ca.IteraterEmiters((be) =>
         {
+            Vector3 mp = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 dir = (mp - be.transform.position).normalized;
+            Quaternion Rot = Quaternion.LookRotation(dir.normalized, Vector3.up);
+            be.transform.rotation = Quaternion.Euler(Vector3.up * Rot.eulerAngles.y);
             be.OnGameUpdate(dt);
         });
 

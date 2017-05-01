@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using Emitter;
 using LitJson;
+using System.IO;
+using System;
 
 public class GameScene
 {
